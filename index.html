@@ -5,8 +5,8 @@
 		<meta name="viewport" content="initial-scale=1.0">
 		<title>公車動態資訊</title>
 		<link rel="icon" type="image/png" href="">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css" />
 		<link rel="stylesheet" href="css/main.css"/>
-		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
@@ -14,6 +14,10 @@
 		<script type="text/javascript" src="js/main.js"></script>
 	</head>
 	<body>
+		<!-- Replace the value of the key parameter with your own API key. -->
+		<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWA4XIQuDs-oT_IBF0vbFl9-n2oPQGbv0&callback=initMap">
+		</script>
 		<!-- Header -->
 		<header>
 			<a class="logo" href="index.html">公車動態資訊網</a>
@@ -30,10 +34,22 @@
 		</section>
 		<!-- MAIN -->
 		<section id="instr">
-			<h4>ABCabc大家好</h4>
-			<p>HIIIIIIII大家好<br>HIIIIIIII大家好</p>
+			<h4><hr>Let's Design Your Own Bus Route <hr></h4>
+			<div id="ex">你可以隨意點選數個你偏好的公車站點，我們即將為你計算這條路線的預測載客量</div>
 		</section>
 		<section id="display">
+			<div id="box">
+				<div class="ui stackable two column grid" id="main">
+					<div class="column" id="map"></div>
+					<div class="column" id="pointlist">
+						<h4>List of Points :</h4>
+						<div id="latlng">
+						</div>
+						<div><span id="save">送出</span></div>
+					</div>
+				</div>
+			</div>
+			<div id ="directions-panel"></div>
 		</section>
 		<!-- Footer -->
 		<footer id="footer">
